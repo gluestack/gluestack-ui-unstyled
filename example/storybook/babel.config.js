@@ -83,6 +83,10 @@ function getAliases() {
     '@gluestack-ui/utils': path.join(__dirname, '../../packages/utils/src'),
     '@gluestack-ui/tabs': path.join(__dirname, '../../packages/tabs/src'),
     '@gluestack-ui/newmenu': path.join(__dirname, '../../packages/newmenu/src'),
+    '@gluestack-ui/linear-gradient': path.join(
+      __dirname,
+      '../../packages/linear-gradient/src'
+    ),
     '@gluestack-ui/transitions': path.join(
       __dirname,
       '../../packages/transitions/src'
