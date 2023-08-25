@@ -10,6 +10,7 @@
       "@gluestack-ui/avatar": ["../../packages/avatar/src"],
       "@gluestack-ui/pressable": ["../../packages/pressable/src"],
       "@gluestack-ui/button": ["../../packages/button/src"],
+      "@gluestack-ui/linear-gradient": ["../../packages/linear-gradient/src"],
       "@gluestack-ui/center": ["../../packages/center/src"],
       "@gluestack-ui/checkbox": ["../../packages/checkbox/src"],
       "@gluestack-ui/divider": ["../../packages/divider/src"],
