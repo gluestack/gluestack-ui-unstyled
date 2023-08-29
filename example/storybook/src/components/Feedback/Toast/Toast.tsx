@@ -1,13 +1,17 @@
 import React from 'react';
 import {
   Button,
+  ButtonText,
   Toast,
+  ToastTitle,
+  ToastDescription,
   useToast,
   Icon,
   CloseIcon,
   VStack,
   CheckIcon,
   Pressable,
+  Center,
 } from '../../../ui-components';
 import { MessageCircle, AlertTriangleIcon } from 'lucide-react-native';
 
@@ -19,19 +23,15 @@ const ToastStory = ({ placement = 'top', ...props }: any) => {
         toast.show({
           placement: placement,
           duration: null,
-          accessibilityAnnouncement: 'hello',
-          accessibilityLiveRegion: 'polite',
-          avoidKeyboard: false,
-
           render: ({ id }) => {
             return (
               <>
                 <Toast nativeID={id} {...props}>
                   <VStack space="xs">
-                    <Toast.Title>Hello World Toast </Toast.Title>
-                    <Toast.Description>
+                    <ToastTitle>Hello World Toast </ToastTitle>
+                    <ToastDescription>
                       Please create a support tibnnbcket from the support page
-                    </Toast.Description>
+                    </ToastDescription>
                   </VStack>
                   <Pressable onPress={() => toast.close(id)}>
                     <Icon as={CloseIcon} color="$coolGray50" />
@@ -43,7 +43,7 @@ const ToastStory = ({ placement = 'top', ...props }: any) => {
         });
       }}
     >
-      <Button.Text>Press Me</Button.Text>
+      <ButtonText>Press Me</ButtonText>
     </Button>
   );
 };
@@ -52,6 +52,8 @@ export default ToastStory;
 
 export {
   Toast,
+  ToastTitle,
+  ToastDescription,
   useToast,
   Icon,
   CloseIcon,
@@ -60,5 +62,7 @@ export {
   MessageCircle,
   AlertTriangleIcon,
   Button,
+  ButtonText,
   Pressable,
+  Center,
 };

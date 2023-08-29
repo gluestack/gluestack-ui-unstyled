@@ -4,10 +4,13 @@ import React from 'react';
 
 import {
   Button,
+  ButtonText,
+  ButtonIcon,
+  ButtonGroup,
   Icon,
   AddIcon,
   InfoIcon,
-  Spinner,
+  ButtonSpinner,
   ArrowUpIcon,
   Heading,
   Text,
@@ -15,6 +18,7 @@ import {
   VStack,
   ThreeDotsIcon,
   Input,
+  InputInput,
 } from '../../../ui-components';
 
 import { EditIcon, ArrowLeftIcon } from 'lucide-react-native';
@@ -24,7 +28,7 @@ type MyButtonStory = ComponentStory<typeof Button>;
 const ButtonStory: MyButtonStory = ({ text = 'Button', ...props }: any) => {
   return (
     <Button {...props}>
-      <Button.Text>{text}</Button.Text>
+      <ButtonText>{text}</ButtonText>
     </Button>
   );
 };
@@ -33,10 +37,13 @@ export default ButtonStory;
 
 export {
   Button,
+  ButtonText,
+  ButtonIcon,
+  ButtonGroup,
   Icon,
   AddIcon,
   InfoIcon,
-  Spinner,
+  ButtonSpinner,
   EditIcon,
   ArrowUpIcon,
   Heading,
@@ -46,6 +53,7 @@ export {
   VStack,
   ThreeDotsIcon,
   Input,
+  InputInput,
   ArrowLeftIcon,
   Center,
 };

@@ -1,5 +1,19 @@
 # @gluestack-ui/slider
 
+## 0.1.10
+
+### Patch Changes
+
+- Changed component APIs from dot notation to normal
+- Updated dependencies
+  - @gluestack-ui/form-control@0.1.10
+
+## 0.1.9
+
+### Patch Changes
+
+- Fixed slider with orientation and reversed and moved out style from styled files
+
 ## 0.1.8
 
 ### Patch Changes

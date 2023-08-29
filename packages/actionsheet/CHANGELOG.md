@@ -1,5 +1,30 @@
 # @gluestack-ui/actionsheet
 
+## 0.2.16
+
+### Patch Changes
+
+- Changed component APIs from dot notation to normal
+
+## 0.2.15
+
+### Patch Changes
+
+- actionsheet performance improved and added snapPoints
+
+## 0.2.14
+
+### Patch Changes
+
+- 997b0d64: Added experimentalOverlay flag for internal usecase
+- experimental props for internal usecase
+
+## 0.2.12
+
+### Patch Changes
+
+- placeholder in select and animation speed in actionsheet
+
 ## 0.2.11
 
 ### Patch Changes

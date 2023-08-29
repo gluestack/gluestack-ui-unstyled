@@ -1,5 +1,24 @@
 # @gluestack-ui/menu
 
+## 0.2.15
+
+### Patch Changes
+
+- Changed component APIs from dot notation to normal
+
+## 0.2.14
+
+### Patch Changes
+
+- 997b0d64: Added experimentalOverlay flag for internal usecase
+- experimental props for internal usecase
+
+## 0.2.13
+
+### Patch Changes
+
+- Fixed focus states and click on disabled item
+
 ## 0.2.12
 
 ### Patch Changes

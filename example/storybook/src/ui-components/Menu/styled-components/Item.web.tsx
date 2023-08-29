@@ -7,19 +7,32 @@ export const Item = styled(
     'flexDirection': 'row',
     'alignItems': 'center',
     ':hover': {
-      bg: '$backgroundLight50',
+      bg: '$backgroundLight100',
     },
 
     ':disabled': {
-      opacity: 0.4,
+      'opacity': 0.4,
+      // @ts-ignore
+      'cursor': 'not-allowed',
+      ':focus': {
+        bg: 'transparent',
+      },
+      '_dark': {
+        ':focus': {
+          bg: 'transparent',
+        },
+      },
     },
 
     ':active': {
-      bg: '$backgroundLight100',
+      bg: '$backgroundLight200',
     },
 
     ':focus': {
       bg: '$backgroundLight100',
+      // @ts-ignore
+      outlineWidth: '$0',
+      outlineStyle: 'none',
     },
 
     '_dark': {
@@ -32,20 +45,19 @@ export const Item = styled(
       },
 
       ':focus': {
-        bg: '$backgroundDark700',
+        bg: '$backgroundDark800',
       },
     },
-
-    '_web': {
-      ':focusVisible': {
-        outlineWidth: '$0',
-        bg: '$backgroundLight100',
-        _dark: {
-          bg: '$backgroundDark700',
-        },
+    ':focusVisible': {
+      // @ts-ignore
+      outlineWidth: '$0.5',
+      outlineColor: '$primary700',
+      outlineStyle: 'solid',
+      _dark: {
+        outlineColor: '$primary300',
       },
-      'cursor': 'pointer',
     },
+    'cursor': 'pointer',
   },
   {
     descendantStyle: ['_text'],
