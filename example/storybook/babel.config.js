@@ -42,6 +42,7 @@ function getAliases() {
     '@gluestack-ui/radio': path.join(__dirname, '../../packages/radio/src'),
     '@gluestack-ui/spinner': path.join(__dirname, '../../packages/spinner/src'),
     '@gluestack-ui/slider': path.join(__dirname, '../../packages/slider/src'),
+    '@gluestack-ui/stack': path.join(__dirname, '../../packages/stack/src'),
     '@gluestack-ui/checkbox': path.join(
       __dirname,
       '../../packages/checkbox/src'

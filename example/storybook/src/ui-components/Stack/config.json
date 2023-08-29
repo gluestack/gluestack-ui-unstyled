@@ -1,0 +1,4 @@
+{
+  "dependencies": { "@gluestack-ui/stack": "latest" },
+  "keywords": ["components", "core"]
+}
