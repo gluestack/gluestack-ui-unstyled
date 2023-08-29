@@ -6,6 +6,7 @@ export default styled(
   {
     defaultProps: {
       flexDirection: 'row',
+      space: 'md',
     },
     variants: {
       space: {
