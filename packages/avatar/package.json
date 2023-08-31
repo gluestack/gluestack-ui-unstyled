@@ -1,7 +1,7 @@
 {
   "name": "@gluestack-ui/avatar",
   "description": "A universal headless avatar component for React Native, Next.js & React",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
@@ -32,10 +32,8 @@
     "@gluestack-ui/utils": "^0.1.5"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-dom": "*",
-    "react-native": "*",
-    "react-native-web": "*"
+    "react": ">=16",
+    "react-dom": ">=16"
   },
   "react-native-builder-bob": {
     "source": "src",
