@@ -23,16 +23,6 @@ export function Popover({
     return null;
   }
 
-  if (!_experimentalOverlay) {
-    return (
-      // @ts-ignore
-      <View {...popoverProps} ref={ref}>
-        <DismissButton onDismiss={state.close} />
-        {children}
-        <DismissButton onDismiss={state.close} />
-      </View>
-    );
-  }
   return (
     <Overlay>
       <StyledBackdrop

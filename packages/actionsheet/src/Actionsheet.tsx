@@ -78,20 +78,6 @@ export function Actionsheet<T>(StyledActionsheet: React.ComponentType<T>) {
         snapPoints,
       ]);
 
-      if (!_experimentalOverlay) {
-        return (
-          <ActionsheetContext.Provider value={contextValue}>
-            <StyledActionsheet
-              ref={ref}
-              style={[StyleSheet.absoluteFill]}
-              {...(props as T)}
-            >
-              {children}
-            </StyledActionsheet>
-          </ActionsheetContext.Provider>
-        );
-      }
-
       return (
         <Overlay
           isOpen={visible}
