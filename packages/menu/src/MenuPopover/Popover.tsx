@@ -85,54 +85,6 @@ export const Popover = forwardRef(
     const targetRefTemp = React.useRef(null);
     const targetRef = triggerRef || targetRefTemp;
 
-    if (!_experimentalOverlay) {
-      return (
-        <>
-          {updatedTrigger(targetRef)}
-          <PopoverProvider
-            value={{
-              onClose: handleClose,
-              targetRef,
-              strategy: 'absolute',
-              handleClose: handleClose,
-              initialFocusRef,
-              finalFocusRef,
-              popoverContentId,
-              bodyId,
-              headerId,
-              headerMounted,
-              bodyMounted,
-              setBodyMounted,
-              setHeaderMounted,
-              isOpen,
-              placement,
-              shouldOverlapWithTrigger,
-              crossOffset,
-              offset,
-              shouldFlip,
-            }}
-          >
-            <StyledBackdrop
-              onPress={onClose}
-              focusable={false}
-              accessibilityElementsHidden
-              importantForAccessibility="no-hide-descendants"
-              aria-hidden={true}
-            />
-            <View ref={ref} {...props}>
-              <FocusScopeComponent
-                trapFocus={trapFocus}
-                focusScope={focusScope}
-              >
-                <PopoverContent AnimatePresence={AnimatePresence}>
-                  {children}
-                </PopoverContent>
-              </FocusScopeComponent>
-            </View>
-          </PopoverProvider>
-        </>
-      );
-    }
     return (
       <>
         {updatedTrigger(targetRef)}
