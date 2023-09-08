@@ -27,7 +27,7 @@ module.exports = () => {
     },
     "dependencies": {
       "@react-native-aria/focus": "^0.2.7",
-      "react-native-svg": "13.4.0"
+  "react-native-svg": "^13.4.x"
     },
     "peerDependencies": {
       "react": ">=16",
