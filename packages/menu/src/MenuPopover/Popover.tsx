@@ -1,38 +1,31 @@
 import React, { forwardRef } from 'react';
 import { useControllableState } from '@gluestack-ui/hooks';
 import { Overlay } from '@gluestack-ui/overlay';
-import { View } from 'react-native';
 import { PopoverProvider } from './PopoverContext';
 import { FocusScope as FocusScopeAria } from '@react-native-aria/focus';
 import { PopoverContent } from './PopoverContent';
 import { MenuContext } from '../MenuContext';
 export const Popover = forwardRef(
-  (
-    {
-      state,
-      onOpen,
-      trigger,
-      children,
-      defaultIsOpen = false,
-      initialFocusRef,
-      finalFocusRef,
-      useRNModal,
-      trapFocus = true,
-      placement = 'bottom',
-      shouldOverlapWithTrigger = false,
-      crossOffset,
-      offset,
-      triggerRef,
-      AnimatePresence,
-      shouldFlip,
-      focusScope = true,
-      StyledBackdrop,
-      // @ts-ignore
-      _experimentalOverlay = false,
-      ...props
-    }: any,
-    ref: any
-  ) => {
+  ({
+    state,
+    onOpen,
+    trigger,
+    children,
+    defaultIsOpen = false,
+    initialFocusRef,
+    finalFocusRef,
+    useRNModal,
+    trapFocus = true,
+    placement = 'bottom',
+    shouldOverlapWithTrigger = false,
+    crossOffset,
+    offset,
+    triggerRef,
+    AnimatePresence,
+    shouldFlip,
+    focusScope = true,
+    StyledBackdrop,
+  }: any) => {
     const [isOpen, setIsOpen] = useControllableState({
       value: state?.isOpen,
       defaultValue: defaultIsOpen,
@@ -125,16 +118,12 @@ export const Popover = forwardRef(
               importantForAccessibility="no-hide-descendants"
               aria-hidden={true}
             />
-            <View ref={ref} {...props}>
-              <FocusScopeComponent
-                trapFocus={trapFocus}
-                focusScope={focusScope}
-              >
-                <PopoverContent AnimatePresence={AnimatePresence}>
-                  {children}
-                </PopoverContent>
-              </FocusScopeComponent>
-            </View>
+
+            <FocusScopeComponent trapFocus={trapFocus} focusScope={focusScope}>
+              <PopoverContent AnimatePresence={AnimatePresence}>
+                {children}
+              </PopoverContent>
+            </FocusScopeComponent>
           </PopoverProvider>
         </Overlay>
       </>

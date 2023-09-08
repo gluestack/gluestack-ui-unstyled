@@ -75,7 +75,6 @@ const PopoverContent = forwardRef(
       shouldOverlapWithTrigger,
       shouldFlip,
     });
-    console.log(overlayProps, 'overlayProps');
 
     const mergedRef = mergeRefs([ref, overlayRef, contentRef]);
 

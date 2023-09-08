@@ -1,52 +1,64 @@
 import React from 'react';
+import { SafeAreaView } from 'react-native';
 import {
-  Button,
-  ButtonText,
-  config,
-  GlobeIcon,
+  Box,
   GluestackUIProvider,
-  Icon,
   Menu,
   MenuItem,
   MenuItemLabel,
+  Icon,
+  GlobeIcon,
+  SettingsIcon,
+  AddIcon,
+  Button,
+  ButtonText,
+  config,
 } from '@components';
-export default function App() {
+
+const AddToStackButton = ({ ...triggerProps }) => (
+  <Button {...triggerProps}>
+    <ButtonText>Menu</ButtonText>
+  </Button>
+);
+
+const PLACEMENT = 'bottom';
+
+const Example = () => {
   return (
-    <GluestackUIProvider config={config.theme}>
-      <Menu
-        isOpen={true}
-        placement={'top'}
-        disabledKeys={['Settings']}
-        // eslint-disable-next-line react/no-unstable-nested-components
-        trigger={({ ...triggerProps }) => {
-          return (
-            <Button {...triggerProps} mt="auto">
-              <ButtonText>Menu</ButtonText>
-            </Button>
-          );
-        }}
-      >
+    <Box
+      h="100%"
+      justifyContent="center"
+      px={4}
+      bg="$backgroundLight0"
+      sx={{
+        _web: {
+          minHeight: '100vh',
+        },
+      }}
+    >
+      <Menu placement={PLACEMENT} trigger={AddToStackButton}>
         <MenuItem key="Community" textValue="Community">
           <Icon as={GlobeIcon} size="sm" mr="$2" />
           <MenuItemLabel size="sm">Community</MenuItemLabel>
         </MenuItem>
-        <MenuItem key="Plugins" textValue="Plugins">
-          <Icon as={GlobeIcon} size="sm" mr="$2" />
-          <MenuItemLabel size="sm">Plugins</MenuItemLabel>
-        </MenuItem>
-        <MenuItem key="Theme" textValue="Theme">
-          <Icon as={GlobeIcon} size="sm" mr="$2" />
-          <MenuItemLabel size="sm">Theme</MenuItemLabel>
-        </MenuItem>
         <MenuItem key="Settings" textValue="Settings">
-          <Icon as={GlobeIcon} size="sm" mr="$2" />
+          <Icon as={SettingsIcon} size="sm" mr="$2" />
           <MenuItemLabel size="sm">Settings</MenuItemLabel>
         </MenuItem>
         <MenuItem key="Add account" textValue="Add account">
-          <Icon as={GlobeIcon} size="sm" mr="$2" />
+          <Icon as={AddIcon} size="sm" mr="$2" />
           <MenuItemLabel size="sm">Add account</MenuItemLabel>
         </MenuItem>
       </Menu>
-    </GluestackUIProvider>
+    </Box>
+  );
+};
+export default function App() {
+  return (
+    <SafeAreaView>
+      <GluestackUIProvider config={config.theme}>
+        <Example />
+      </GluestackUIProvider>
+    </SafeAreaView>
   );
 }
