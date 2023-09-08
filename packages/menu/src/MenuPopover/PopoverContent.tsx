@@ -3,7 +3,8 @@ import { useKeyboardDismissable } from '@gluestack-ui/hooks';
 import { usePopover } from './PopoverContext';
 import { AccessibilityInfo, View, findNodeHandle } from 'react-native';
 import { mergeRefs } from '@gluestack-ui/utils';
-import { useOverlayPosition } from '@react-native-aria/overlays';
+// import { useOverlayPosition } from '@react-native-aria/overlays';
+import { useOverlayPosition } from './useOverlayPosition';
 
 const PopoverContent = forwardRef(
   ({ children, style, ...props }: any, ref: any) => {
@@ -74,6 +75,7 @@ const PopoverContent = forwardRef(
       shouldOverlapWithTrigger,
       shouldFlip,
     });
+    console.log(overlayProps, 'overlayProps');
 
     const mergedRef = mergeRefs([ref, overlayRef, contentRef]);
 
