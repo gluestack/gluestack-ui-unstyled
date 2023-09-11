@@ -3917,6 +3917,19 @@
     "@react-native-aria/utils" "^0.2.6"
     "@react-stately/slider" "^3.0.1"
 
+"@react-native-aria/slider@^0.2.7":
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/@react-native-aria/slider/-/slider-0.2.7.tgz#ab79052388a64afe5818be05bd0b915214ff2007"
+  integrity sha512-9SacbsDHz8TlLJsC69dRpP15BhDv2sV1LtffVJvwufRoFCdKvEzYyWA6Mu7GxWQR7OoTzl4kYvP0IEArNAgczA==
+  dependencies:
+    "@react-aria/focus" "^3.2.3"
+    "@react-aria/interactions" "^3.3.2"
+    "@react-aria/label" "^3.1.1"
+    "@react-aria/slider" "^3.0.1"
+    "@react-aria/utils" "^3.6.0"
+    "@react-native-aria/utils" "^0.2.8"
+    "@react-stately/slider" "^3.0.1"
+
 "@react-native-aria/toggle@^0.2.3":
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/@react-native-aria/toggle/-/toggle-0.2.3.tgz#a387f03480aa0d97dc0191acbcae66122f7bcf7f"
