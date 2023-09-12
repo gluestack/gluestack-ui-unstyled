@@ -1,8 +1,8 @@
 import { styled } from '../../styled';
-import { Pressable } from 'react-native';
+import { Animated } from 'react-native';
 
 export default styled(
-  Pressable,
+  Animated.View,
   {
     'bg': '$primary500',
     '_dark': {
