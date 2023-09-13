@@ -1,7 +1,6 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
       "ui-components": ["../storybook/src/ui-components/index"],
       "@gluestack-ui/actionsheet": ["../../packages/actionsheet/src"],
@@ -65,6 +64,5 @@
     "strict": true,
     "target": "esnext"
   },
-  "exclude": ["lib", "node_modules", "storybookDocsComponents"],
-  "include": ["src"]
+  "exclude": ["node_modules"]
 }
