@@ -8,12 +8,12 @@ export default styled(
     flex: 1,
     color: '$textLight900',
     props: {
-      placeholderTextColor: '$textLight500',
+      // placeholderTextColor: '$textLight500',
     },
     _dark: {
       color: '$textDark50',
       props: {
-        placeholderTextColor: '$textDark400',
+        // placeholderTextColor: '$textDark400',
       },
     },
     _web: {
