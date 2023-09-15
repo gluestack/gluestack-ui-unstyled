@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Input,
   InputInput,
+  InputSlot,
   InputIcon,
   Center,
   Button,
@@ -29,9 +30,9 @@ const InputStory = ({ ...props }: any) => {
         value={value}
         placeholder="Enter Text here"
       />
-      <InputIcon pr="$4">
-        <Icon as={SearchIcon} />
-      </InputIcon>
+      <InputSlot px="$4">
+        <InputIcon as={SearchIcon} />
+      </InputSlot>
     </Input>
   );
 };
@@ -41,6 +42,7 @@ export default InputStory;
 export {
   Input,
   InputInput,
+  InputSlot,
   InputIcon,
   Center,
   Button,

@@ -1,16 +1,45 @@
 import { styled } from '../../styled';
-import { Pressable } from 'react-native';
+import { AsForwarder } from '@gluestack-style/react';
+
+const Icon = styled(AsForwarder, {}, {});
 
 export default styled(
-  Pressable,
+  Icon,
   {
-    justifyContent: 'center',
-    alignItems: 'center',
-    _web: {
-      ':disabled': {
-        cursor: 'not-allowed',
+    variants: {
+      size: {
+        xs: {
+          h: 12,
+          w: 12,
+        },
+        sm: {
+          h: 16,
+          w: 16,
+        },
+        md: {
+          h: 18,
+          w: 18,
+        },
+        lg: {
+          h: 20,
+          w: 20,
+        },
+        xl: {
+          h: 24,
+          w: 24,
+        },
       },
     },
+    defaultProps: {
+      size: 'md',
+    },
   },
-  { descendantStyle: ['_icon'] }
+  {
+    ancestorStyle: ['_icon'],
+  },
+  {
+    propertyTokenMap: {
+      stroke: 'colors',
+    },
+  }
 );

@@ -17,6 +17,7 @@ import { Meta } from '@storybook/addon-docs';
 import {
   Input,
   InputInput,
+  InputSlot,
   InputIcon,
   Center,
   Box,
@@ -63,6 +64,7 @@ Note: We have added a new API for the components — you can avoid the use of ".
         Input,
         InputInput,
         InputIcon,
+        InputSlot,
       },
       argsType: {
         variant: {
@@ -110,7 +112,9 @@ The structure provided below can help you identify and understand a Input compon
 export default () => (
   <Input>
     <InputInput />
-    <InputIcon>{/* Some Icon Component */}</InputIcon>
+    <InputSlot>
+      <InputIcon>{/* Some Icon Component */}</InputIcon>
+    </InputSlot>
   </Input>
 );
 ```
@@ -290,9 +294,13 @@ It inherits all the properties of React Native's [TextInput](https://reactnative
   </TableContainer>
 </AppProvider>
 
-#### InputIcon
+#### InputSlot
 
 It inherits all the properties of React Native's [Pressable](https://reactnative.dev/docs/pressable) component.
+
+#### InputIcon
+
+It inherits all the properties of React Native's [View](https://reactnative.dev/docs/view) component.
 
 ### Features
 
@@ -389,10 +397,10 @@ The Input component integrates with an icon and a button, providing users with a
                     <InputInput
                       type={showPassword ? 'text' : 'password'}
                     />
-                    <InputIcon pr='$3' onPress={handleState}>
+                    <InputSlot pr='$3' onPress={handleState}>
                       {/* EyeIcon, EyeOffIcon are both imported from 'lucide-react-native' */}
-                      <Icon as={showPassword ? EyeIcon : EyeOffIcon}  color='$darkBlue500'/>
-                    </InputIcon>
+                      <InputIcon as={showPassword ? EyeIcon : EyeOffIcon}  color='$darkBlue500'/>
+                    </InputSlot>
                   </Input>
                 </VStack>
                 <Button
@@ -418,6 +426,7 @@ The Input component integrates with an icon and a button, providing users with a
         Input,
         InputInput,
         InputIcon,
+        InputSlot,
         Button,
         ButtonText,
         VStack,
@@ -445,9 +454,9 @@ The Input with Icons is a variation of the Input component that displays icons n
     metaData={{
       code: `
         <Input>
-          <InputIcon pl='$3'>
-            <Icon as={SearchIcon}/>
-          </InputIcon>
+          <InputSlot pl='$3'>
+            <InputIcon as={SearchIcon}/>
+          </InputSlot>
           <InputInput
             placeholder="Search..."
           />
@@ -489,7 +498,7 @@ import { Root, Input } from '../components/core/input/styled-components';
 import { createInput } from '@gluestack-ui/input';
 
 //import any icon
-import { searchIcon } from '@gluestack/icons';
+import { SearchIcon } from '@gluestack/icons';
 
 // Understanding the API
 const InputField = createInput({
@@ -500,9 +509,9 @@ const InputField = createInput({
 // Using the input component
 export default () => (
   <Input>
-    <InputIcon pl="$3">
-      <Icon as={SearchIcon} />
-    </InputIcon>
+    <InputSlot pl="$3">
+      <InputIcon as={SearchIcon} />
+    </InputSlot>
     <InputInput placeholder="your text goes here..." />
   </Input>
 );
