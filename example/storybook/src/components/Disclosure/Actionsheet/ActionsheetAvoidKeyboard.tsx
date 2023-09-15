@@ -10,6 +10,7 @@ import {
   ButtonText,
   VStack,
   Input,
+  InputSlot,
   InputIcon,
   InputInput,
   FormControl,
@@ -118,9 +119,9 @@ function ActionsheetExample({
                 </FormControlLabelText>
               </FormControlLabel>
               <Input isFullWidth={true} {...props}>
-                <InputIcon>
-                  <Icon as={LeadingIcon} ml="$3" />
-                </InputIcon>
+                <InputSlot>
+                  <InputIcon as={LeadingIcon} ml="$3" />
+                </InputSlot>
                 <InputInput placeholder="CVC/CVV" />
               </Input>
               <Button onPress={handleClose} mt={20}>
