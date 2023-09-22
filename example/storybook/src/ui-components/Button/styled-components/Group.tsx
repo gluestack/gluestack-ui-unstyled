@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { styled } from '../../styled';
 import { View } from 'react-native';
 
@@ -19,12 +18,6 @@ export default styled(
               fontSize: '$xs',
               lineHeight: '$sm',
             },
-          },
-          _groupHSpacer: {
-            size: '$xs',
-          },
-          _groupVSpacer: {
-            size: '$xs',
           },
         },
         sm: {
@@ -108,13 +101,40 @@ export default styled(
           },
         },
       },
+      space: {
+        'xs': {
+          gap: `$1`,
+        },
+        'sm': {
+          gap: `$2`,
+        },
+        'md': {
+          gap: `$3`,
+        },
+        'lg': {
+          gap: `$4`,
+        },
+        'xl': {
+          gap: `$5`,
+        },
+        '2xl': {
+          gap: `$6`,
+        },
+        '3xl': {
+          gap: `$7`,
+        },
+        '4xl': {
+          gap: `$8`,
+        },
+      },
     },
 
     defaultProps: {
       size: 'md',
+      space: 'sm',
     },
   },
   {
-    descendantStyle: ['_button', '_groupHSpacer', '_groupVSpacer'],
+    descendantStyle: ['_button'],
   }
 );
