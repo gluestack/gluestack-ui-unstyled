@@ -33,6 +33,7 @@ module.exports = {
   moduleNameMapper: {
     '^react-native$': 'react-native-web',
     '@gluestack-ui/button': path.join(__dirname, '../../packages/button/src'),
+    '@gluestack-ui/image': path.join(__dirname, '../../packages/image/src'),
     '@gluestack-ui/vstack': path.join(__dirname, '../../packages/vstack/src'),
     '@gluestack-ui/tooltip': path.join(__dirname, '../../packages/tooltip/src'),
     '@gluestack-ui/popover': path.join(__dirname, '../../packages/popover/src'),
