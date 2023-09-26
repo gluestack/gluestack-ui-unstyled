@@ -6,6 +6,7 @@ import {
   findNodeHandle,
   AccessibilityInfo,
   Platform,
+  Keyboard,
 } from 'react-native';
 import { ActionsheetContext } from './context';
 import { ActionsheetContentProvider } from './ActionsheetContentContext';
@@ -46,6 +47,12 @@ function ActionsheetContent<T>(
       const pan = React.useRef(new Animated.ValueXY()).current;
       const contentSheetHeight = React.useRef(0);
 
+      const [contentSheetHeightState, setContentSheetHeightState] =
+        React.useState(0);
+
+      const [animatedViewSheetHeight, setAnimatedViewSheetHeight] =
+        React.useState(0);
+
       const animationDefaultConfig = {
         type: 'timing',
         duration: 200,
@@ -56,10 +63,12 @@ function ActionsheetContent<T>(
         handleClose,
       ]);
 
-      const contentSheetAnimatePosition = React.useMemo(
-        () => windowHeight - snapPoints[0] * windowHeight * 0.01,
-        [snapPoints]
-      );
+      const contentSheetAnimatePosition = React.useMemo(() => {
+        if (!snapPoints) {
+          return animatedViewSheetHeight - contentSheetHeightState;
+        }
+        return windowHeight - snapPoints[0] * windowHeight * 0.01;
+      }, [snapPoints, animatedViewSheetHeight, contentSheetHeightState]);
 
       const contentRef = React.useRef(null);
       React.useEffect(() => {
@@ -79,14 +88,14 @@ function ActionsheetContent<T>(
       }, [visible, contentRef]);
 
       React.useEffect(() => {
-        const finalRefVal = finalFocusRef ? finalFocusRef.current : null;
         if (visible) {
+          Keyboard.dismiss();
           if (initialFocusRef && initialFocusRef.current) {
             initialFocusRef.current.focus();
           }
         } else {
-          if (finalRefVal) {
-            finalRefVal.focus();
+          if (finalFocusRef && finalFocusRef.current) {
+            finalFocusRef.current.focus();
           }
         }
       }, [initialFocusRef, finalFocusRef, visible]);
@@ -126,6 +135,10 @@ function ActionsheetContent<T>(
             width: '100%',
             height: '100%',
           }}
+          onLayout={(event) => {
+            const { height } = event.nativeEvent.layout;
+            setAnimatedViewSheetHeight(height);
+          }}
           pointerEvents="box-none"
         >
           <FocusScope
@@ -147,11 +160,17 @@ function ActionsheetContent<T>(
                 exit={{
                   y: windowHeight,
                 }}
+                height={snapPoints ? contentSheetAnimatePosition : undefined}
                 transition={animationDefaultConfig}
                 {...(props as T)}
                 ref={mergedRef}
                 focusable={Platform.OS === 'web' ? focusable : undefined}
                 {...dialogProps}
+                onLayout={(event: any) => {
+                  const { height } = event.nativeEvent.layout;
+                  contentSheetHeight.current = height;
+                  setContentSheetHeightState(height);
+                }}
               >
                 <ActionsheetContentProvider
                   contentSheetHeight={contentSheetHeight}
