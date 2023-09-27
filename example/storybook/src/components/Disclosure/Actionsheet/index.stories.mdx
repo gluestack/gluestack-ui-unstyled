@@ -37,6 +37,7 @@ import {
   VStack,
   Input,
   InputIcon,
+  InputSlot,
   InputInput,
   FormControl,
   FormControlLabel,
@@ -567,12 +568,6 @@ Demonstrates a common UI pattern known as keyboard handling or keyboard scrollin
                     Confirm security code
                   </FormControlLabelText>
                 </FormControlLabel>
-                <Input w="$full">
-                  <InputIcon>
-                   <Icon as={LeadingIcon} ml="$2" />
-                  </InputIcon>
-                  <InputInput placeholder="CVC/CVV" />
-                </Input>
                 <Button onPress={handleClose} mt={20}>
                   <ButtonText>Pay $1000</ButtonText>
                 </Button>
@@ -602,6 +597,7 @@ Demonstrates a common UI pattern known as keyboard handling or keyboard scrollin
         VStack,
         Input,
         InputIcon,
+        InputSlot,
         InputInput,
         FormControl,
         FormControlLabel,
