@@ -64,11 +64,9 @@ export type IToastComponentType<
   StyledToast,
   StyledToastTitle,
   StyledToastDescription
-> = ((props: StyledToast) => JSX.Element) & {
-  Title: React.MemoExoticComponent<(props: StyledToastTitle) => JSX.Element>;
-  Description: React.MemoExoticComponent<
-    (props: StyledToastDescription) => JSX.Element
-  >;
+> = React.ForwardRefExoticComponent<StyledToast> & {
+  Title: React.ForwardRefExoticComponent<StyledToastTitle>;
+  Description: React.ForwardRefExoticComponent<StyledToastDescription>;
 };
 
 export type IToastProps = InterfaceToastProps;

@@ -51,12 +51,11 @@ export interface IInputProps {
   onBlur?: any;
 }
 
-export type IInputComponentType<Root, Icon, Slot, Input> = ((
-  props: Root & IInputFieldProps
-) => JSX.Element) & {
-  Icon: (props: Icon) => JSX.Element;
-  Slot: (props: Slot) => JSX.Element;
-  Input: (props: Input & IInputProps) => JSX.Element;
-};
+export type IInputComponentType<Root, Icon, Slot, Input> =
+  React.ForwardRefExoticComponent<Root & IInputFieldProps> & {
+    Icon: React.ForwardRefExoticComponent<Icon>;
+    Slot: React.ForwardRefExoticComponent<Slot>;
+    Input: React.ForwardRefExoticComponent<Input & IInputProps>;
+  };
 
 // export type InputProps = Partial<IInputProps>;

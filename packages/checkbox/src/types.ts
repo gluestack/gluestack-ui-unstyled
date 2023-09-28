@@ -22,15 +22,12 @@ export interface ICheckboxGroup {
   isRequired?: boolean;
 }
 
-export type ICheckboxComponentType<Root, Indicator, Icon, Label, Group> = ((
-  props: Root & InterfaceCheckbox
-) => JSX.Element) & {
-  Indicator: React.MemoExoticComponent<(props: Indicator) => JSX.Element>;
-  Icon: React.MemoExoticComponent<(props: Icon) => JSX.Element>;
-  Label: React.MemoExoticComponent<(props: Label) => JSX.Element>;
-  Group: React.MemoExoticComponent<
-    (props: Group & ICheckboxGroup) => JSX.Element
-  >;
-};
+export type ICheckboxComponentType<Root, Indicator, Icon, Label, Group> =
+  React.ForwardRefExoticComponent<Root & InterfaceCheckbox> & {
+    Indicator: React.ForwardRefExoticComponent<Indicator>;
+    Icon: React.ForwardRefExoticComponent<Icon>;
+    Label: React.ForwardRefExoticComponent<Label>;
+    Group: React.ForwardRefExoticComponent<Group & ICheckboxGroup>;
+  };
 
 export type ICheckboxProps = InterfaceCheckbox;
