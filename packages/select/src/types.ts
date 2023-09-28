@@ -38,20 +38,20 @@ export type ISelectComponentType<
   SelectFlatListProps,
   SelectSectionListProps,
   SelectSectionHeaderTextProps
-> = ((props: SelectProps & ISelectProps) => JSX.Element) & {
-  Trigger: (props: SelectTriggerProps) => JSX.Element;
-  Input: (props: SelectInputProps) => JSX.Element;
-  Icon: (props: SelectIconProps) => JSX.Element;
-  Portal: (props: SelectPortalProps) => JSX.Element;
-  Backdrop: (props: SelectBackdropProps) => JSX.Element;
-  Content: (props: SelectContentProps) => JSX.Element;
-  DragIndicator: (props: SelectDragIndicatorProps) => JSX.Element;
-  DragIndicatorWrapper: (props: SelectDragIndicatorWrapperProps) => JSX.Element;
-  Item: (props: ISelectItemProps & SelectItemProps) => JSX.Element;
-  ItemText: (props: SelectItemTextProps) => JSX.Element;
-  ScrollView: (props: SelectScrollViewProps) => JSX.Element;
-  VirtualizedList: (props: SelectVirtualizedListProps) => JSX.Element;
-  FlatList: (props: SelectFlatListProps) => JSX.Element;
-  SectionList: (props: SelectSectionListProps) => JSX.Element;
-  SectionHeaderText: (props: SelectSectionHeaderTextProps) => JSX.Element;
+> = React.ForwardRefExoticComponent<SelectProps & ISelectProps> & {
+  Trigger: React.ForwardRefExoticComponent<SelectTriggerProps>;
+  Input: React.ForwardRefExoticComponent<SelectInputProps>;
+  Icon: React.ForwardRefExoticComponent<SelectIconProps>;
+  Portal: React.ForwardRefExoticComponent<SelectPortalProps>;
+  Backdrop: React.ForwardRefExoticComponent<SelectBackdropProps>;
+  Content: React.ForwardRefExoticComponent<SelectContentProps>;
+  DragIndicator: React.ForwardRefExoticComponent<SelectDragIndicatorProps>;
+  DragIndicatorWrapper: React.ForwardRefExoticComponent<SelectDragIndicatorWrapperProps>;
+  Item: React.ForwardRefExoticComponent<ISelectItemProps & SelectItemProps>;
+  ItemText: React.ForwardRefExoticComponent<SelectItemTextProps>;
+  ScrollView: React.ForwardRefExoticComponent<SelectScrollViewProps>;
+  VirtualizedList: React.ForwardRefExoticComponent<SelectVirtualizedListProps>;
+  FlatList: React.ForwardRefExoticComponent<SelectFlatListProps>;
+  SectionList: React.ForwardRefExoticComponent<SelectSectionListProps>;
+  SectionHeaderText: React.ForwardRefExoticComponent<SelectSectionHeaderTextProps>;
 };

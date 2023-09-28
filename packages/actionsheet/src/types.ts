@@ -62,21 +62,23 @@ export type IActionsheetComponentType<
   SectionListProps,
   SectionHeaderTextProps,
   IconProps
-> = ((props: ActionsheetProps & IActionsheetProps) => JSX.Element) & {
-  Content: (
-    props: ContentProps & InterfaceActionsheetContentProps
-  ) => JSX.Element;
-  Item: (props: ItemProps & InterfaceActionsheetItemProps) => JSX.Element;
-  ItemText: (props: ItemTextProps) => JSX.Element;
-  DragIndicator: (props: DragIndicatorProps) => JSX.Element;
-  Backdrop: (props: BackdropProps) => JSX.Element;
-  DragIndicatorWrapper: (props: IndicatorWrapperProps) => JSX.Element;
-  ScrollView: (props: ScrollViewProps) => JSX.Element;
-  VirtualizedList: (props: VirtualizedListProps) => JSX.Element;
-  FlatList: (props: FlatListProps) => JSX.Element;
-  SectionList: (props: SectionListProps) => JSX.Element;
-  SectionHeaderText: (props: SectionHeaderTextProps) => JSX.Element;
-  Icon: (props: IconProps) => JSX.Element;
+> = React.ForwardRefExoticComponent<ActionsheetProps & IActionsheetProps> & {
+  Content: React.ForwardRefExoticComponent<
+    ContentProps & InterfaceActionsheetContentProps
+  >;
+  Item: React.ForwardRefExoticComponent<
+    ItemProps & InterfaceActionsheetItemProps
+  >;
+  ItemText: React.ForwardRefExoticComponent<ItemTextProps>;
+  DragIndicator: React.ForwardRefExoticComponent<DragIndicatorProps>;
+  Backdrop: React.ForwardRefExoticComponent<BackdropProps>;
+  DragIndicatorWrapper: React.ForwardRefExoticComponent<IndicatorWrapperProps>;
+  ScrollView: React.ForwardRefExoticComponent<ScrollViewProps>;
+  VirtualizedList: React.ForwardRefExoticComponent<VirtualizedListProps>;
+  FlatList: React.ForwardRefExoticComponent<FlatListProps>;
+  SectionList: React.ForwardRefExoticComponent<SectionListProps>;
+  SectionHeaderText: React.ForwardRefExoticComponent<SectionHeaderTextProps>;
+  Icon: React.ForwardRefExoticComponent<IconProps>;
 };
 
 export type IActionsheetProps = InterfaceActionsheetProps;

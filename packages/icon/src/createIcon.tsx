@@ -1,8 +1,8 @@
 import React, { forwardRef } from 'react';
+import { ViewProps } from 'react-native';
 import { Path, G } from 'react-native-svg';
 
 interface CreateIconOptions {
-  Root?: any;
   /**
    * The icon `svg` viewBox
    * @default "0 0 24 24"
@@ -28,6 +28,12 @@ interface CreateIconOptions {
   type?: any;
 }
 
+export interface IIconProps extends ViewProps {}
+
+export type IIconComponentType<IconProps> = React.ForwardRefExoticComponent<
+  IconProps & IIconProps
+>;
+
 const ChildPath = ({ element, fill, stroke: pathStroke }: any) => {
   const pathStrokeColor = pathStroke || '';
   const fillColor = fill || '';
@@ -42,14 +48,13 @@ const ChildPath = ({ element, fill, stroke: pathStroke }: any) => {
   });
 };
 
-export const createIcon = ({
+export function createIcon<IconProps>({
   Root,
   path,
   d,
-
   ...initialProps
-}: CreateIconOptions) => {
-  const createdIcon = (props: any, ref?: any) => {
+}: { Root: React.ComponentType<IconProps> } & CreateIconOptions) {
+  const IconTemp = forwardRef((props: any, ref?: any) => {
     let children = path;
     if (d && (!path || Object.keys(path).length === 0)) {
       children = <Path fill="currentColor" d={d} />;
@@ -105,6 +110,8 @@ export const createIcon = ({
         ) : null}
       </Root>
     );
-  };
-  return forwardRef(createdIcon);
-};
+  });
+
+  const Icon = IconTemp as IIconComponentType<IconProps>;
+  return Icon;
+}

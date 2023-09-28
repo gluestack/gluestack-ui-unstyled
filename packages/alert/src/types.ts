@@ -5,9 +5,9 @@ export interface InterfaceAlertProps extends ViewProps {
 }
 
 export type IAlertComponentType<StyledAlert, StyledAlertText, StyledAlertIcon> =
-  ((props: StyledAlert & InterfaceAlertProps) => JSX.Element) & {
-    Text: (props: StyledAlertText) => JSX.Element;
-    Icon: (props: StyledAlertIcon) => JSX.Element;
+  React.ForwardRefExoticComponent<StyledAlert & InterfaceAlertProps> & {
+    Text: React.ForwardRefExoticComponent<StyledAlertText>;
+    Icon: React.ForwardRefExoticComponent<StyledAlertIcon>;
   };
 
 export type IAlertProps = InterfaceAlertProps;

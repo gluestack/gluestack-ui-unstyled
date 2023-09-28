@@ -27,8 +27,7 @@ export type IUseLinkProp = {
   _ref: MutableRefObject<any>;
 };
 
-export type ILinkComponentType<Root, TextProps> = ((
-  props: Root & InterfaceLinkProps
-) => JSX.Element) & {
-  Text: React.MemoExoticComponent<(props: TextProps) => JSX.Element>;
-};
+export type ILinkComponentType<Root, TextProps> =
+  React.ForwardRefExoticComponent<Root & InterfaceLinkProps> & {
+    Text: React.ForwardRefExoticComponent<TextProps>;
+  };

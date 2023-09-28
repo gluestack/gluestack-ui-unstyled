@@ -31,9 +31,8 @@ export interface InterfaceFabProps {
   isDisabled?: boolean;
 }
 
-export type IFabComponentType<StyledFab, StyledFabLabel, StyledFabIcon> = ((
-  props: StyledFab & InterfaceFabProps
-) => JSX.Element) & {
-  Label: React.MemoExoticComponent<(props: StyledFabLabel) => JSX.Element>;
-  Icon: React.MemoExoticComponent<(props: StyledFabIcon) => JSX.Element>;
-};
+export type IFabComponentType<StyledFab, StyledFabLabel, StyledFabIcon> =
+  React.ForwardRefExoticComponent<StyledFab & InterfaceFabProps> & {
+    Label: React.ForwardRefExoticComponent<StyledFabLabel>;
+    Icon: React.ForwardRefExoticComponent<StyledFabIcon>;
+  };

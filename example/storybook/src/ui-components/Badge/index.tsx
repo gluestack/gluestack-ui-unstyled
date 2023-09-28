@@ -8,9 +8,9 @@ type RootProps = React.ComponentProps<typeof Root>;
 type IconProps = React.ComponentProps<typeof Icon>;
 type TextProps = React.ComponentProps<typeof Text>;
 
-type IBadgeComponentType = ((props: RootProps) => JSX.Element) & {
-  Icon: (props: IconProps) => JSX.Element;
-  Text: (props: TextProps) => JSX.Element;
+type IBadgeComponentType = React.ForwardRefExoticComponent<RootProps> & {
+  Icon: React.ForwardRefExoticComponent<IconProps>;
+  Text: React.ForwardRefExoticComponent<TextProps>;
 };
 
 const BadgeMain = Badge as IBadgeComponentType;
