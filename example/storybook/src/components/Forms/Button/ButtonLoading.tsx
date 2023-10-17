@@ -12,14 +12,14 @@ const ButtonIsLoadingExample: MyButtonStory = ({}) => {
     <HStack space="md">
       <Button
         disabled={isLoading}
-        focusable={!isLoading}
+        tabIndex={isLoading === true ? -1 : 0}
         opacity={isLoading ? 0.4 : 1}
       >
         <ButtonSpinner color="white" />
       </Button>
       <Button
         disabled={isLoading}
-        focusable={!isLoading}
+        tabIndex={isLoading === true ? -1 : 0}
         opacity={isLoading ? 0.4 : 1}
       >
         <ButtonSpinner color="white" mr="$2" />
@@ -27,7 +27,7 @@ const ButtonIsLoadingExample: MyButtonStory = ({}) => {
       </Button>
       <Button
         disabled={isLoading}
-        focusable={!isLoading}
+        tabIndex={isLoading === true ? -1 : 0}
         opacity={isLoading ? 0.4 : 1}
       >
         <ButtonText>Submitting</ButtonText>

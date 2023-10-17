@@ -47,6 +47,7 @@ export default styled(
     'defaultProps': {
       hardShadow: '2',
     },
+    '_web': {},
   },
   { descendantStyle: ['_text'] }
 );
