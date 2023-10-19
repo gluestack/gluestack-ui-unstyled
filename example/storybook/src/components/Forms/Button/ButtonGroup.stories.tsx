@@ -7,7 +7,7 @@ const ButtonGroupMeta: ComponentMeta<any> = {
   title: 'stories/FORMS/Button',
   component: ButtonGroupStory,
   args: {
-    space: 'md',
+    space: 'sm',
     isAttached: true,
     direction: 'row',
   },

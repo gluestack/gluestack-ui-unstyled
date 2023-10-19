@@ -8,133 +8,81 @@ export default styled(
       size: {
         xs: {
           _button: {
-            px: '$3.5',
-            h: '$8',
-            _icon: {
-              h: '$3',
-              w: '$3',
-            },
-            _text: {
-              fontSize: '$xs',
-              lineHeight: '$sm',
+            props: {
+              size: 'xs',
             },
           },
         },
         sm: {
           _button: {
-            px: '$4',
-            h: '$9',
-            _icon: {
-              h: '$4',
-              w: '$4',
+            props: {
+              size: 'sm',
             },
-            _text: {
-              fontSize: '$sm',
-              lineHeight: '$sm',
-            },
-          },
-          _groupHSpacer: {
-            size: '$sm',
-          },
-          _groupVSpacer: {
-            size: '$sm',
           },
         },
         md: {
           _button: {
-            px: '$5',
-            h: '$10',
-            _icon: {
-              h: '$4.5',
-              w: '$4.5',
+            props: {
+              size: 'md',
             },
-            _text: {
-              fontSize: '$md',
-              lineHeight: '$md',
-            },
-          },
-          _groupHSpacer: {
-            size: '$md',
-          },
-          _groupVSpacer: {
-            size: '$md',
           },
         },
         lg: {
           _button: {
-            px: '$6',
-            h: '$11',
-            _icon: {
-              h: '$4.5',
-              w: '$4.5',
+            props: {
+              size: 'lg',
             },
-            _text: {
-              fontSize: '$lg',
-              lineHeight: '$xl',
-            },
-          },
-          _groupHSpacer: {
-            size: '$lg',
-          },
-          _groupVSpacer: {
-            size: '$lg',
           },
         },
         xl: {
           _button: {
-            px: '$7',
-            h: '$12',
-            _icon: {
-              h: '$5',
-              w: '$5',
+            _button: {
+              props: {
+                size: 'xl',
+              },
             },
-            _text: {
-              fontSize: '$xl',
-              lineHeight: '$xl',
-            },
-          },
-          _groupHSpacer: {
-            size: '$xl',
-          },
-          _groupVSpacer: {
-            size: '$xl',
           },
         },
       },
       space: {
         'xs': {
-          gap: `$1`,
+          gap: '$1',
         },
         'sm': {
-          gap: `$2`,
+          gap: '$2',
         },
         'md': {
-          gap: `$3`,
+          gap: '$3',
         },
         'lg': {
-          gap: `$4`,
+          gap: '$4',
         },
         'xl': {
-          gap: `$5`,
+          gap: '$5',
         },
         '2xl': {
-          gap: `$6`,
+          gap: '$6',
         },
         '3xl': {
-          gap: `$7`,
+          gap: '$7',
         },
         '4xl': {
-          gap: `$8`,
+          gap: '$8',
+        },
+      },
+      isAttached: {
+        true: {
+          gap: 0,
         },
       },
     },
-
     defaultProps: {
       size: 'md',
       space: 'sm',
     },
   },
   {
+    componentName: 'ButtonGroup',
     descendantStyle: ['_button'],
   }
 );
