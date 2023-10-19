@@ -21,7 +21,7 @@ module.exports = () => {
       "react-dom": "^18.1.0",
       "react-native": "^0.72.4",
       "react-native-builder-bob": "^0.20.1",
-      "react-native-web": "^0.18.1",
+      "react-native-web": "^0.19.9",
       "tsconfig": "7",
       "typescript": "^4.9.4"
     },
