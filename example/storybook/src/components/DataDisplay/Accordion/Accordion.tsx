@@ -15,8 +15,13 @@ type MyAccordionStory = ComponentStory<typeof Accordion>;
 
 const AccordionStory: MyAccordionStory = ({}: any) => {
   return (
-    <Accordion type="multiple" orientation="vertical">
-      <AccordionItem value="a">
+    <Accordion
+      type="single"
+      orientation="vertical"
+      isCollapsible={false}
+      defaultValue={'a'}
+    >
+      <AccordionItem value="a" isDisabled={true}>
         <AccordionHeader>
           <AccordionTrigger>
             <Text>This is a trigger</Text>
