@@ -20,7 +20,6 @@ const AccordionStory: MyAccordionStory = ({}: any) => {
         <AccordionHeader>
           <AccordionTrigger>
             <Text>This is a trigger</Text>
-
             <AccordionIcon as={ChevronDownIcon} pl="$5" />
           </AccordionTrigger>
         </AccordionHeader>
