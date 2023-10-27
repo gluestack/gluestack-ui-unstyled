@@ -6,6 +6,8 @@ export default styled(
   View,
   {
     py: '$4',
+    borderBottomWidth: 0.5,
+    borderBottomColor: '$gray500',
   },
   {
     descendantStyle: [],
