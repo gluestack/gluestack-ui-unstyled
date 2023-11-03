@@ -3,9 +3,11 @@ import { View } from 'react-native';
 
 export default styled(
   View,
-  {},
   {
-    descendantStyle: [],
+    px: '$7',
+  },
+  {
+    descendantStyle: ['_text'],
     ancestorStyle: [],
   }
 );

@@ -6,8 +6,12 @@ const Icon = styled(AsForwarder, {}, {});
 export default styled(
   Icon,
   {
+    ml: '$3',
     _dark: {
-      color: 'white',
+      color: '$textDark200',
+    },
+    _light: {
+      color: '$textLight900',
     },
   },
   {

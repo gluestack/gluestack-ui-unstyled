@@ -1,6 +1,6 @@
 import React from 'react';
 import type { ComponentStory } from '@storybook/react-native';
-import { Text } from '../../../ui-components';
+import { AccordionContentText, Divider } from '../../../ui-components';
 import { ChevronDownIcon } from 'lucide-react-native';
 import {
   Accordion,
@@ -9,6 +9,7 @@ import {
   AccordionContent,
   AccordionTrigger,
   AccordionIcon,
+  AccordionTitleText,
 } from '../../../ui-components';
 
 type MyAccordionStory = ComponentStory<typeof Accordion>;
@@ -16,53 +17,92 @@ type MyAccordionStory = ComponentStory<typeof Accordion>;
 const AccordionStory: MyAccordionStory = ({}: any) => {
   return (
     <Accordion
-      type="single"
-      orientation="vertical"
-      isCollapsible={false}
-      defaultValue={'a'}
+      // isDisabled={true}
+      type="multiple"
+      // orientation="vertical"
+      isCollapsible={true}
+      // defaultValue={'a'}
+      variant={'filled'}
+      size="sm"
     >
       <AccordionItem value="a" isDisabled={true}>
         <AccordionHeader>
           <AccordionTrigger>
-            <Text>This is a trigger</Text>
-            <AccordionIcon as={ChevronDownIcon} pl="$5" />
+            <AccordionTitleText>This is a trigger</AccordionTitleText>
+            <AccordionIcon as={ChevronDownIcon} />
           </AccordionTrigger>
         </AccordionHeader>
         <AccordionContent>
-          <Text> Content</Text>
+          <AccordionContentText> Content</AccordionContentText>
         </AccordionContent>
       </AccordionItem>
+
+      <Divider
+        sx={{
+          _light: {
+            bg: '$borderLight300',
+          },
+          _dark: {
+            bg: '$borderDark800',
+          },
+        }}
+      />
+
       <AccordionItem value="b">
         <AccordionHeader>
           <AccordionTrigger>
-            <Text>This is a trigger</Text>
-            <AccordionIcon as={ChevronDownIcon} pl="$5" />
+            <AccordionTitleText>This is a trigger</AccordionTitleText>
+            <AccordionIcon as={ChevronDownIcon} />
           </AccordionTrigger>
         </AccordionHeader>
         <AccordionContent>
-          <Text> Content</Text>
+          <AccordionContentText> Content</AccordionContentText>
         </AccordionContent>
       </AccordionItem>
+
+      <Divider
+        sx={{
+          _light: {
+            bg: '$borderLight300',
+          },
+          _dark: {
+            bg: '$borderDark800',
+          },
+        }}
+      />
+
       <AccordionItem value="c">
         <AccordionHeader>
           <AccordionTrigger>
-            <Text>This is a trigger</Text>
-            <AccordionIcon as={ChevronDownIcon} pl="$5" />
+            <AccordionTitleText>This is a trigger</AccordionTitleText>
+            <AccordionIcon as={ChevronDownIcon} />
           </AccordionTrigger>
         </AccordionHeader>
         <AccordionContent>
-          <Text> Content</Text>
+          <AccordionContentText> Content</AccordionContentText>
         </AccordionContent>
       </AccordionItem>
+
+      <Divider
+        sx={{
+          _light: {
+            bg: '$borderLight300',
+          },
+          _dark: {
+            bg: '$borderDark800',
+          },
+        }}
+      />
+
       <AccordionItem value="d" isDisabled={false}>
         <AccordionHeader>
           <AccordionTrigger>
-            <Text>This is a trigger</Text>
-            <AccordionIcon as={ChevronDownIcon} pl="$5" />
+            <AccordionTitleText>This is a trigger</AccordionTitleText>
+            <AccordionIcon as={ChevronDownIcon} />
           </AccordionTrigger>
         </AccordionHeader>
         <AccordionContent>
-          <Text> Content</Text>
+          <AccordionContentText> Content</AccordionContentText>
         </AccordionContent>
       </AccordionItem>
     </Accordion>
