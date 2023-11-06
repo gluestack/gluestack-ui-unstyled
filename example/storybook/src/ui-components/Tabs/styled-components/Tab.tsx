@@ -29,15 +29,17 @@ export default styled(
     },
     ':hover': {
       // bg: '$secondary50_alpha_20',
-      borderRadius: '$full',
+      bg: '$primary300',
+      // borderRadius: '$full',
     },
     ':active': {
       // bg: '$secondary50_alpha_10',
-      borderRadius: '$full',
+      bg: '$primary400',
+      // borderRadius: '$full',
     },
     ':focus': {
       // bg: '$secondary50_alpha_20',
-      borderRadius: '$full',
+      // borderRadius: '$full',
     },
     ':disabled': {
       opacity: 0.5,
