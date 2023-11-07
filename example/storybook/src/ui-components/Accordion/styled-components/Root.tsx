@@ -4,25 +4,35 @@ import { View } from 'react-native';
 export default styled(
   View,
   {
-    'maxWidth': 640,
-    'width': '80%',
-    'gap': 24,
-    'py': '$7',
-
-    ':disabled': {
-      _web: {
-        // @ts-ignore
+    maxWidth: 640,
+    width: '80%',
+    _web: {
+      ':disabled': {
         cursor: 'not-allowed',
       },
     },
-    'variants': {
+    variants: {
       size: {
         sm: {
           _titleText: {
-            fontSize: '$lg',
+            fontSize: '$sm',
             fontFamily: '$body',
             fontWeight: '$bold',
-            lineHeight: '$lg',
+            lineHeight: '$sm',
+          },
+          _contentText: {
+            fontSize: '$sm',
+            fontFamily: '$body',
+            fontWeight: '$normal',
+            lineHeight: '$sm',
+          },
+        },
+        md: {
+          _titleText: {
+            fontSize: '$md',
+            fontFamily: '$body',
+            fontWeight: '$bold',
+            lineHeight: '$md',
           },
           _contentText: {
             fontSize: '$md',
@@ -31,40 +41,25 @@ export default styled(
             lineHeight: '$md',
           },
         },
-        md: {
+        lg: {
           _titleText: {
-            fontSize: '$xl',
+            fontSize: '$lg',
             fontFamily: '$body',
             fontWeight: '$bold',
-            lineHeight: '$2xl',
+            lineHeight: '$lg',
           },
           _contentText: {
             fontSize: '$lg',
             fontFamily: '$body',
             fontWeight: '$normal',
-            lineHeight: '$xl',
-          },
-        },
-        lg: {
-          _titleText: {
-            fontSize: '$2xl',
-            fontFamily: '$body',
-            fontWeight: '$bold',
-            lineHeight: '$3xl',
-          },
-          _contentText: {
-            fontSize: '$xl',
-            fontFamily: '$body',
-            fontWeight: '$normal',
-            lineHeight: '2$xl',
+            lineHeight: '$lg',
           },
         },
       },
       variant: {
         filled: {
-          borderRadius: '$lg',
           _light: {
-            backgroundColor: 'white',
+            backgroundColor: '$backgroundLight0',
             shadowColor: '$backgroundLight900',
             shadowOffset: {
               width: 0,
@@ -75,7 +70,7 @@ export default styled(
             elevation: 10,
           },
           _dark: {
-            backgroundColor: '$backgroundDark900',
+            backgroundColor: '$backgroundDark950',
           },
         },
         unfilled: {
@@ -93,14 +88,14 @@ export default styled(
         },
       },
     },
-    'defaultProps': {
+    defaultProps: {
       theme: 'light',
       size: 'sm',
       variant: 'filled',
     },
   },
   {
-    descendantStyle: ['_text', '_titleText', '_contentText', '_icon'],
+    descendantStyle: ['_titleText', '_contentText', '_icon'],
     ancestorStyle: [],
   }
 );

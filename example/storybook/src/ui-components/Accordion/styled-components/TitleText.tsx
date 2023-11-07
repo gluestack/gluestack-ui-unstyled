@@ -4,7 +4,7 @@ import { styled } from '../../styled';
 export default styled(
   Text,
   {
-    maxWidth: 548,
+    flex: 1,
     _light: {
       color: '$textLight900',
     },
@@ -12,5 +12,5 @@ export default styled(
       color: '$textDark50',
     },
   },
-  { ancestorStyle: ['_text', '_titleText'] }
+  { ancestorStyle: ['_titleText'] }
 );

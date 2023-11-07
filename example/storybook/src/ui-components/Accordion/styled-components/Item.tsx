@@ -6,7 +6,7 @@ export default styled(
   View,
   {},
   {
-    descendantStyle: ['_text'],
+    descendantStyle: [],
     ancestorStyle: [],
   }
 );

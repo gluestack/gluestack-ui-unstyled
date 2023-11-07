@@ -8,10 +8,10 @@ export default styled(
   {
     ml: '$3',
     _dark: {
-      color: '$textDark200',
+      color: '$backgroundDark50',
     },
     _light: {
-      color: '$textLight900',
+      color: '$backgroundLight900',
     },
   },
   {

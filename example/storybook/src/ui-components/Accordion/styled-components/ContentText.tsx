@@ -9,9 +9,9 @@ export default styled(
       color: '$textDark200',
     },
     _light: {
-      color: '$textLight900',
+      color: '$textLight700',
     },
   },
 
-  { ancestorStyle: ['_text', '_contentText'] }
+  { ancestorStyle: ['_contentText'] }
 );
