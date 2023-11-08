@@ -39,6 +39,10 @@ module.exports = {
       use: 'babel-loader',
     });
 
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'react-native$': 'react-native-web',
+    };
     config.module.rules.push({
       test: /\.mjs$/,
       include: /node_modules/,
