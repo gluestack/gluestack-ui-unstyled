@@ -24,6 +24,10 @@ module.exports = function (api) {
 function getAliases() {
   return {
     // For development, we want to alias the library to the source
+    '@gluestack-ui/accordion': path.join(
+      __dirname,
+      '../../packages/accordion/src'
+    ),
     '@gluestack-ui/button': path.join(__dirname, '../../packages/button/src'),
     '@gluestack-ui/image': path.join(__dirname, '../../packages/image/src'),
     '@gluestack-ui/vstack': path.join(__dirname, '../../packages/vstack/src'),
