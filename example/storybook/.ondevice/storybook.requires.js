@@ -50,13 +50,13 @@ try {
 const getStories = () => {
   return [
     require('../src/components/Disclosure/Actionsheet/Actionsheet.stories.tsx'),
-    // require('../src/components/Disclosure/Accordion/Acc.stories.tsx'),
     require('../src/components/Typography/Text/Text.stories.tsx'),
     require('../src/components/Overlay/AlertDialog/AlertDialog.stories.tsx'),
     require('../src/components/MediaAndIcons/Avatar/Avatar.stories.tsx'),
     require('../src/components/Feedback/Alert/Alert.stories.tsx'),
     require('../src/components/Forms/Button/Button.stories.tsx'),
     require('../src/components/DataDisplay/Badge/Badge.stories.tsx'),
+    require('../src/components/DataDisplay/Accordion/Accordion.stories.tsx'),
     require('../src/components/Forms/Button/ButtonGroup.stories.tsx'),
     require('../src/components/Forms/Checkbox/Checkbox.stories.tsx'),
     require('../src/components/DataDisplay/Divider/Divider.stories.tsx'),

@@ -38,7 +38,7 @@ const RadioStory = ({
         isInvalid={isInvalid}
         size={size}
         value="Label 1"
-        accessibilityLabel="Radio"
+        aria-label="Label 1"
         onChange={(nextValue: boolean) => console.log(nextValue, 'nextValue')}
         {...props}
       >
@@ -52,7 +52,7 @@ const RadioStory = ({
         isInvalid={isInvalid}
         size={size}
         value="Label 2"
-        accessibilityLabel="Radio"
+        aria-label="Label 2"
         onChange={(nextValue: boolean) => console.log(nextValue, 'nextValue')}
       >
         <RadioIndicator>
@@ -65,7 +65,7 @@ const RadioStory = ({
         isInvalid={isInvalid}
         size={size}
         value="Label 3"
-        accessibilityLabel="Radio"
+        aria-label="Label 3"
         onChange={(isSelected: boolean) =>
           console.log(isSelected, 'isSelected')
         }

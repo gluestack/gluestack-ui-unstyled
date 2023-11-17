@@ -166,7 +166,7 @@ Contains all Checkbox related layout style props and actions. It inherits all th
             </Table.TText>
           </Table.TD>
           <Table.TD>
-            <Table.TText>function</Table.TText>
+            <Table.TText>`(value: any) => any`</Table.TText>
           </Table.TD>
           <Table.TD>
             <Table.TText>-</Table.TText>
@@ -185,7 +185,7 @@ Contains all Checkbox related layout style props and actions. It inherits all th
             <Table.TText>bool</Table.TText>
           </Table.TD>
           <Table.TD>
-            <Table.TText>true</Table.TText>
+            <Table.TText>false</Table.TText>
           </Table.TD>
           <Table.TD>
             <Table.TText>{`If true, the checkbox will be initially checked.`}</Table.TText>
@@ -371,7 +371,7 @@ Contains all Group related layout style props and actions. It inherits all the p
             </Table.TText>
           </Table.TD>
           <Table.TD>
-            <Table.TText>function</Table.TText>
+            <Table.TText>`(values: any) => any`</Table.TText>
           </Table.TD>
           <Table.TD>
             <Table.TText>-</Table.TText>
@@ -459,9 +459,9 @@ We have outlined the various features that ensure the Checkbox component is acce
 #### States
 
 - Setting the `accessibilityState`.
-- In error state, `accessibilityInvalid` will be passed to indicate that the radio input has an error, and providing support for an `accessibilityErrorMessage` to describe the error in more detail.
-- In disabled state, `accessibilityElementsHidden` will be passed to make radio input unfocusable.
-- In required state, `accessibilityRequired` will be passed to indicate that the radio input is required.
+- In error state, `aria-invalid` will be passed to indicate that the radio input has an error, and providing support for an `aria-errormessage` to describe the error in more detail.
+- In disabled state, `aria-hidden` will be passed to make radio input unfocusable.
+- In required state, `aria-required` will be passed to indicate that the radio input is required.
 
 ### Dependencies
 
