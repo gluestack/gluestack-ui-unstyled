@@ -25,8 +25,6 @@ const AccordionStory: MyAccordionStory = ({}: any) => {
         variant={'filled'}
         size="sm"
         mt="$5"
-        // value={['c', 'd']}
-        // isDisabled={true}
       >
         <AccordionItem value="a">
           <AccordionHeader>
@@ -155,8 +153,6 @@ const AccordionStory: MyAccordionStory = ({}: any) => {
         variant={'filled'}
         size="sm"
         mt="$5"
-        // value={['c', 'd']}
-        // isDisabled={true}
       >
         <AccordionItem value="a1">
           <AccordionHeader>
