@@ -15,6 +15,7 @@ import {
 type MyAccordionStory = ComponentStory<typeof Accordion>;
 
 const AccordionStory: MyAccordionStory = ({}: any) => {
+  const [selectedValues, setSelectedValues] = React.useState(['a', 'b']);
   return (
     <>
       <Accordion
@@ -24,8 +25,10 @@ const AccordionStory: MyAccordionStory = ({}: any) => {
         variant={'unfilled'}
         size="sm"
         mt="$5"
-        value={['c', 'a', 'd']}
-        // defaultValue={['a']}
+        value={selectedValues}
+        onValueChange={(value: any) => {
+          setSelectedValues(value);
+        }}
       >
         <AccordionItem value="a">
           <AccordionHeader>
