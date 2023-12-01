@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@expo/html-elements": "^0.4.2",
+    "@expo/webpack-config": "^18.0.1",
     "@gluestack-style/animation-resolver": "^1.0.2",
     "@gluestack-style/legend-motion-animation-driver": "^1.0.2",
     "@gluestack-style/react": "^1.0.17",
@@ -30,6 +31,7 @@
     "@legendapp/motion": "^2.2.0",
     "@react-native-async-storage/async-storage": "~1.17.3",
     "@react-native-community/datetimepicker": "6.5.2",
+    "@react-native-community/slider": "^4.4.3",
     "expo": "^48.0.0",
     "expo-linear-gradient": "~12.0.1",
     "expo-status-bar": "~1.4.2",

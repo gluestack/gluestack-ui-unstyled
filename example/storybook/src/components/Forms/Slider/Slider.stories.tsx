@@ -33,7 +33,7 @@ const SliderMeta: ComponentMeta<typeof Slider> = {
     },
   },
   //@ts-ignore
-  args: { value: 30, size: 'md' },
+  // args: { value: 30, size: 'md' },
 };
 
 export default SliderMeta;
