@@ -6,11 +6,6 @@ export default styled(
   {
     maxWidth: 640,
     width: '80%',
-    _web: {
-      ':disabled': {
-        cursor: 'not-allowed',
-      },
-    },
     variants: {
       size: {
         sm: {
