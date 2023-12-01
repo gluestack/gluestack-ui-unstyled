@@ -24,27 +24,33 @@ const POSITIONS = {
     top: 0,
     left: 0,
     right: 0,
+    alignItems: 'center',
   },
   'top right': {
     top: 0,
     right: 0,
+    alignItems: 'flex-end',
   },
   'top left': {
     top: 0,
     left: 0,
+    alignItems: 'flex-start',
   },
   'bottom': {
     bottom: 0,
     left: 0,
     right: 0,
+    alignItems: 'center',
   },
   'bottom left': {
     bottom: 0,
     left: 0,
+    alignItems: 'flex-start',
   },
   'bottom right': {
     bottom: 0,
     right: 0,
+    alignItems: 'flex-end',
   },
 };
 export const ToastList = () => {
@@ -76,7 +82,6 @@ export const ToastList = () => {
             <View
               key={position}
               style={{
-                alignItems: 'center',
                 justifyContent: 'center',
                 margin: 'auto',
                 position: toastPositionStyle,
@@ -87,28 +92,31 @@ export const ToastList = () => {
             >
               {toastInfo[position].map((toast: IToast) => {
                 return (
-                  <OverlayAnimatePresence
+                  <SafeAreaView
+                    style={{ pointerEvents: 'box-none' }}
                     key={toast.id}
-                    visible={visibleToasts[toast.id]}
-                    AnimatePresence={AnimatePresence}
-                    onExit={() => {
-                      removeToast(toast.id);
-                      toast.config?.onCloseComplete &&
-                        toast.config?.onCloseComplete();
-                    }}
                   >
-                    <AnimationView
-                      initial={{
-                        opacity: 0,
-                        y: transitionConfig[position],
+                    <OverlayAnimatePresence
+                      visible={visibleToasts[toast.id]}
+                      AnimatePresence={AnimatePresence}
+                      onExit={() => {
+                        removeToast(toast.id);
+                        toast.config?.onCloseComplete &&
+                          toast.config?.onCloseComplete();
                       }}
-                      animate={{
-                        opacity: 1,
-                        y: 0,
-                      }}
-                      {...toast.config?.containerStyle}
                     >
-                      <SafeAreaView style={{ pointerEvents: 'box-none' }}>
+                      <AnimationView
+                        initial={{
+                          opacity: 0,
+                          y: transitionConfig[position],
+                        }}
+                        animate={{
+                          opacity: 1,
+                          y: 0,
+                        }}
+                        {...toast.config?.containerStyle}
+                        style={{ pointerEvents: 'box-none' }}
+                      >
                         <View
                           style={{
                             bottom:
@@ -124,9 +132,9 @@ export const ToastList = () => {
                         >
                           {toast.component}
                         </View>
-                      </SafeAreaView>
-                    </AnimationView>
-                  </OverlayAnimatePresence>
+                      </AnimationView>
+                    </OverlayAnimatePresence>
+                  </SafeAreaView>
                 );
               })}
             </View>
