@@ -92,28 +92,31 @@ export const ToastList = () => {
             >
               {toastInfo[position].map((toast: IToast) => {
                 return (
-                  <OverlayAnimatePresence
+                  <SafeAreaView
+                    style={{ pointerEvents: 'box-none' }}
                     key={toast.id}
-                    visible={visibleToasts[toast.id]}
-                    AnimatePresence={AnimatePresence}
-                    onExit={() => {
-                      removeToast(toast.id);
-                      toast.config?.onCloseComplete &&
-                        toast.config?.onCloseComplete();
-                    }}
                   >
-                    <AnimationView
-                      initial={{
-                        opacity: 0,
-                        y: transitionConfig[position],
+                    <OverlayAnimatePresence
+                      visible={visibleToasts[toast.id]}
+                      AnimatePresence={AnimatePresence}
+                      onExit={() => {
+                        removeToast(toast.id);
+                        toast.config?.onCloseComplete &&
+                          toast.config?.onCloseComplete();
                       }}
-                      animate={{
-                        opacity: 1,
-                        y: 0,
-                      }}
-                      {...toast.config?.containerStyle}
                     >
-                      <SafeAreaView style={{ pointerEvents: 'box-none' }}>
+                      <AnimationView
+                        initial={{
+                          opacity: 0,
+                          y: transitionConfig[position],
+                        }}
+                        animate={{
+                          opacity: 1,
+                          y: 0,
+                        }}
+                        {...toast.config?.containerStyle}
+                        style={{ pointerEvents: 'box-none' }}
+                      >
                         <View
                           style={{
                             bottom:
@@ -129,9 +132,9 @@ export const ToastList = () => {
                         >
                           {toast.component}
                         </View>
-                      </SafeAreaView>
-                    </AnimationView>
-                  </OverlayAnimatePresence>
+                      </AnimationView>
+                    </OverlayAnimatePresence>
+                  </SafeAreaView>
                 );
               })}
             </View>
