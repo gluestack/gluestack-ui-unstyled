@@ -21,11 +21,6 @@ export const Tabs = <StyledTabs,>(
         },
         ref?: any
       ) => {
-        // const DEFAULT_TAB = 'tab-0';
-        // const [currentActiveTab, setCurrentActiveTab] = React.useState(
-        //   value ?? DEFAULT_TAB
-        // );
-
         const [currentActiveTab, setCurrentActiveTab] = useControllableState({
           value,
           defaultValue,
@@ -33,9 +28,6 @@ export const Tabs = <StyledTabs,>(
             onChange && onChange(val);
           },
         });
-
-        // const onChange = (currentValue: string) =>
-        //   setCurrentActiveTab(currentValue);
 
         return (
           <TabProvider
