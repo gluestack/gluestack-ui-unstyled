@@ -1,6 +1,6 @@
 //@ts-nocheck
 import { styled } from '../../styled';
-import { Pressable } from 'react-native';
+import { Pressable } from '../../Pressable';
 
 export default styled(
   Pressable,
@@ -28,8 +28,8 @@ export default styled(
       size: 'md',
     },
     ':hover': {
-      // bg: '$secondary50_alpha_20',
-      bg: '$primary300',
+      bg: '$secondary50_alpha_20',
+      // bg: '$primary300',
       // borderRadius: '$full',
     },
     ':active': {
@@ -38,8 +38,11 @@ export default styled(
       // borderRadius: '$full',
     },
     ':focus': {
-      // bg: '$secondary50_alpha_20',
+      bg: '$secondary50_alpha_20',
       // borderRadius: '$full',
+    },
+    ':focusVisible': {
+      bg: '$secondary50_alpha_20',
     },
     ':disabled': {
       opacity: 0.5,
