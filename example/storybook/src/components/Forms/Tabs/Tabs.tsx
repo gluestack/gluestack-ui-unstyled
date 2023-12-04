@@ -8,34 +8,49 @@ import {
   TabsTabPanel,
   Text,
   Center,
+  Button,
+  ButtonText,
 } from '../../../ui-components';
 
 const TabsStory = () => {
+  const [currentActiveTab, setCurrentActiveTab] = React.useState('tab1');
   return (
-    <Tabs w="$full" value="tab1">
-      <TabsTabList>
-        <TabsTab value="tab1">
-          <TabsTabTitle>Tab 1</TabsTabTitle>
-        </TabsTab>
-        <TabsTab value="tab2">
-          <TabsTabTitle>Tab 2</TabsTabTitle>
-        </TabsTab>
-        <TabsTab value="tab3">
-          <TabsTabTitle>Tab 3</TabsTabTitle>
-        </TabsTab>
-      </TabsTabList>
-      <TabsTabPanels mt="$4">
-        <TabsTabPanel value="tab1">
-          <Text>Hello world 1</Text>
-        </TabsTabPanel>
-        <TabsTabPanel value="tab2">
-          <Text>Hello world 2</Text>
-        </TabsTabPanel>
-        <TabsTabPanel value="tab3">
-          <Text>Hello world 3</Text>
-        </TabsTabPanel>
-      </TabsTabPanels>
-    </Tabs>
+    <>
+      <Tabs
+        w="$full"
+        defaultValue={currentActiveTab}
+        onChange={(value) => {
+          if (value === 'tab2') return;
+          setCurrentActiveTab(value);
+        }}
+      >
+        <TabsTabList>
+          <TabsTab value="tab1">
+            <TabsTabTitle>Tab 1</TabsTabTitle>
+          </TabsTab>
+          <TabsTab value="tab2">
+            <TabsTabTitle>Tab 2</TabsTabTitle>
+          </TabsTab>
+          <TabsTab value="tab3">
+            <TabsTabTitle>Tab 3</TabsTabTitle>
+          </TabsTab>
+        </TabsTabList>
+        <TabsTabPanels mt="$4">
+          <TabsTabPanel value="tab1">
+            <Text>Hello world 1</Text>
+          </TabsTabPanel>
+          <TabsTabPanel value="tab2">
+            <Text>Hello world 2</Text>
+          </TabsTabPanel>
+          <TabsTabPanel value="tab3">
+            <Text>Hello world 3</Text>
+          </TabsTabPanel>
+        </TabsTabPanels>
+      </Tabs>
+      <Button>
+        <ButtonText>Hello</ButtonText>
+      </Button>
+    </>
   );
 };
 
