@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { PanResponder } from 'react-native';
 
 interface MoveResult {
@@ -16,6 +16,10 @@ interface YourSliderProps {
 export function useMove(props: any): MoveResult {
   let { onMoveStart, onMove, onMoveEnd, yourSliderProps } = props;
 
+  const [initialMoveX, setInitialMoveX] = useState(0);
+  const [initialMoveY, setInitialMoveY] = useState(0);
+  // const [initialValue, setInitialValue] = useState(0);
+  // const [state, setState] = useState(0);
   const panResponder = React.useMemo(
     () =>
       PanResponder.create({
@@ -28,7 +32,12 @@ export function useMove(props: any): MoveResult {
             pointerType: 'touch',
           });
 
-          console.log(gestureState, 'deltaX, deltaY >>>>>');
+          // const { minValue, maxValue, trackLayout, step, value } =
+          //   yourSliderProps;
+
+          setInitialMoveX(gestureState.moveX);
+          setInitialMoveY(gestureState.moveY);
+          // setInitialValue(value);
 
           // onMoveStart?.({
           //   type: 'movestart',
@@ -42,54 +51,22 @@ export function useMove(props: any): MoveResult {
           // gestureState.y0 = gestureState.moveY;
         },
         onPanResponderMove: (_event, gestureState) => {
-          // const deltaX = gestureState.moveX - gestureState.x0;
-          // const deltaY = gestureState.moveY - gestureState.y0;
-
-          if (gestureState.dx === 0 && gestureState.dy === 0) {
+          const deltaX = gestureState.moveX - initialMoveX;
+          const deltaY = gestureState.moveY - initialMoveY;
+          if (deltaX === 0 && deltaY === 0) {
             return;
           }
 
-          // const { minValue, maxValue, trackLayout, step } = yourSliderProps;
-
-          // let trackWidth = trackLayout.width;
-          // let trackHeight = trackLayout.height;
-
-          // // Calculate the range and number of steps
-          // const range = maxValue - minValue;
-          // const steps = range / step;
-
-          // // Calculate the step size based on the track width
-          // const stepSizeX = trackWidth / steps;
-          // const stepSizeY = trackHeight / steps;
-
-          // console.log(
-          //   gestureState.x0,
-          //   'gestureState.x0',
-          //   stepSizeX,
-          //   'stepSizeX',
-          //   gestureState.dx,
-          //   'gestureState.dx',
-          //   Math.round(gestureState.dx / stepSizeX),
-          //   'Math.round(gestureState.dx / stepSizeX)',
-          //   Math.round(gestureState.dx / stepSizeX) * stepSizeX,
-          //   'Math.round(gestureState.dx / stepSizeX) * stepSizeX',
-          //   'HELLO',
-          //   gestureState.moveX,
-          //   'gestureState.moveX'
-          // );
-
-          // // Calculate the snapped thumb position based on the step size
-          // const snappedThumbX =
-          //   Math.round(gestureState.dx / stepSizeX) * stepSizeX;
-          // const snappedThumbY =
-          //   Math.round(gestureState.dy / stepSizeY) * stepSizeY;
-
-          onMove({
-            type: 'move',
-            pointerType: 'touch',
-            deltaX: gestureState.dx,
-            deltaY: gestureState.dy,
-          });
+          if (deltaX) {
+            // setInitialMoveX(gestureState.moveX);
+            // setInitialMoveY(gestureState.moveY);
+            onMove({
+              type: 'move',
+              pointerType: 'touch',
+              deltaX: deltaX, // snappedThumbX,
+              deltaY: deltaY,
+            });
+          }
         },
         onPanResponderRelease: () => {
           onMoveEnd?.({
