@@ -4078,6 +4078,19 @@
     "@react-stately/radio" "^3.2.1"
     "@react-types/radio" "^3.1.1"
 
+"@react-native-aria/slider@^0.2.10":
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/@react-native-aria/slider/-/slider-0.2.10.tgz#19cd79ac4481f41a744b4be5a179f9940e61670e"
+  integrity sha512-flwv/kKHrYmUqgMRO81VsZUccs9tf6dd9Z8SAerkVVj8BrJfVQ/Tb9cABaNsWHxIMUgtfKn0cMQYxLeySjjisw==
+  dependencies:
+    "@react-aria/focus" "^3.2.3"
+    "@react-aria/interactions" "^3.3.2"
+    "@react-aria/label" "^3.1.1"
+    "@react-aria/slider" "^3.0.1"
+    "@react-aria/utils" "^3.6.0"
+    "@react-native-aria/utils" "^0.2.10"
+    "@react-stately/slider" "^3.0.1"
+
 "@react-native-aria/slider@^0.2.5-alpha.2":
   version "0.2.5-alpha.2"
   resolved "https://registry.yarnpkg.com/@react-native-aria/slider/-/slider-0.2.5-alpha.2.tgz#e613c2ac338de8d8ef8999ed664ea743174ee8da"
@@ -4089,19 +4102,6 @@
     "@react-aria/slider" "^3.0.1"
     "@react-aria/utils" "^3.6.0"
     "@react-native-aria/utils" "^0.2.6"
-    "@react-stately/slider" "^3.0.1"
-
-"@react-native-aria/slider@^0.2.9":
-  version "0.2.9"
-  resolved "https://registry.yarnpkg.com/@react-native-aria/slider/-/slider-0.2.9.tgz#58c6aba74cbd03e4b3155bfee058552f6d4f7fc3"
-  integrity sha512-pyCiOy3L7SpzFHYsdGR054trfVMKizi/x10s5spzjXhMAEmYCuP5dEIo43DSz+ZieGGEk/cdvURxjVEwsgHznA==
-  dependencies:
-    "@react-aria/focus" "^3.2.3"
-    "@react-aria/interactions" "^3.3.2"
-    "@react-aria/label" "^3.1.1"
-    "@react-aria/slider" "^3.0.1"
-    "@react-aria/utils" "^3.6.0"
-    "@react-native-aria/utils" "^0.2.10"
     "@react-stately/slider" "^3.0.1"
 
 "@react-native-aria/toggle@^0.2.6":
