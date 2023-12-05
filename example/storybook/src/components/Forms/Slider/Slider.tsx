@@ -24,23 +24,27 @@ const SliderStory = ({
   value: number;
   props: any;
 }) => {
-  const [sliderValue, setSliderValue] = React.useState(0);
+  const [sliderValue, setSliderValue] = React.useState(200);
   const handleChange = (value: any) => {
     setSliderValue(value);
   };
 
-  React.useEffect(() => {
-    handleChange(valueProp);
-  }, [valueProp]);
+  // React.useEffect(() => {
+  //   handleChange(valueProp);
+  // }, [valueProp]);
 
   return (
-    <Box w={200} h={200}>
+    <Box w={300} h={200} m={12}>
       <Slider
+        w={300}
         mt="$4"
         value={sliderValue}
         onChange={(value: any) => {
           handleChange(value);
         }}
+        minValue={0}
+        maxValue={1000}
+        step={100}
         {...props}
       >
         <SliderTrack>

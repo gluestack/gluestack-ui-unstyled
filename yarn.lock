@@ -2468,6 +2468,14 @@
     inline-style-prefixer "^6.0.1"
     normalize-css-color "^1.0.2"
 
+"@gluestack-style/react@^1.0.17":
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/@gluestack-style/react/-/react-1.0.22.tgz#466cabaac6ee0d37de476cf4be0e05c33a73eb2b"
+  integrity sha512-TfLXpkZ997zyQKTFwD7HEUhazn7slaD+X4IBbXJBrxGoYuYDAi/rXXmTrLeaVIKR7hCndSOfgAYyqbR7SR88+g==
+  dependencies:
+    inline-style-prefixer "^6.0.1"
+    normalize-css-color "^1.0.2"
+
 "@gluestack-style/react@^1.0.18":
   version "1.0.18"
   resolved "https://registry.yarnpkg.com/@gluestack-style/react/-/react-1.0.18.tgz#ea3cec5fcdb2d9474030734ec1ef82318c2f89c7"
@@ -3926,6 +3934,11 @@
     "@swc/helpers" "^0.5.0"
     clsx "^1.1.1"
 
+"@react-native-aria/accordion@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@react-native-aria/accordion/-/accordion-0.0.2.tgz#28e57f5c3690b2b33f36acd6aff7d91a75fbf384"
+  integrity sha512-2Wa/YDBc2aCunTLpqwxTfCwn1t63KSAIoXd0hqrUGJJF+N2bEs2Hqs9ZgyKJ/hzFxCknVPMqo0fEVE1H23Z5+g==
+
 "@react-native-aria/checkbox@^0.2.3", "@react-native-aria/checkbox@^0.2.6":
   version "0.2.6"
   resolved "https://registry.yarnpkg.com/@react-native-aria/checkbox/-/checkbox-0.2.6.tgz#80298eb1983e58d834fb9573e9082561368d60fa"
@@ -4642,6 +4655,11 @@
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@react-native-community/eslint-plugin/-/eslint-plugin-1.3.0.tgz#9e558170c106bbafaa1ef502bd8e6d4651012bf9"
   integrity sha512-+zDZ20NUnSWghj7Ku5aFphMzuM9JulqCW+aPXT6IfIXFbb8tzYTTOSeRFOtuekJ99ibW2fUCSsjuKNlwDIbHFg==
+
+"@react-native-community/slider@^4.4.3":
+  version "4.4.3"
+  resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-4.4.3.tgz#9b9dc639b88f5bfda72bd72a9dff55cbf9f777ed"
+  integrity sha512-WdjvGtqJfqcCiLwtbzie53Z/H6w6dIfRHhlW832D89ySAdE5DxLAsqRhDOG0eacuAxxEB+T9sGCkVMD0fa3aBg==
 
 "@react-native/assets-registry@^0.72.0":
   version "0.72.0"
