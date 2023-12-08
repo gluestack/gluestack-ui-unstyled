@@ -10,11 +10,37 @@ export default styled(
       outlineWidth: 0,
     },
 
+    'borderBottomWidth': 1,
+    'borderBottomColor': '$borderLight300',
+    '_title': {
+      color: '$textLight900',
+    },
+    '_icon': {
+      color: '$backgroundLight900',
+    },
+    ':hover': {
+      borderBottomColor: '$primary600',
+      _title: {
+        color: '$primary600',
+      },
+      _icon: {
+        color: '$primary600',
+      },
+    },
+    ':active': {
+      borderBottomColor: '$primary500',
+      _title: {
+        color: '$primary500',
+      },
+      _icon: {
+        color: '$primary500',
+      },
+    },
     'variants': {
       size: {
         md: {
-          px: '$4',
-          py: '$2',
+          px: '$5',
+          py: '$3',
 
           _text: {
             fontSize: '$md',
@@ -26,44 +52,6 @@ export default styled(
 
     'defaultProps': {
       size: 'md',
-    },
-    ':hover': {
-      bg: '$secondary50_alpha_20',
-      // bg: '$primary300',
-      // borderRadius: '$full',
-    },
-    ':active': {
-      // bg: '$secondary50_alpha_10',
-      bg: '$primary400',
-      // borderRadius: '$full',
-    },
-    ':focus': {
-      bg: '$secondary50_alpha_20',
-      // borderRadius: '$full',
-    },
-    ':focusVisible': {
-      bg: '$secondary50_alpha_20',
-    },
-    ':disabled': {
-      opacity: 0.5,
-    },
-
-    '_dark': {
-      ':hover': {
-        bg: '$backgroundLight500',
-        borderRadius: '$full',
-      },
-      ':active': {
-        bg: '$backgroundLight400',
-        borderRadius: '$full',
-      },
-      ':focus': {
-        bg: '$backgroundLight400',
-        borderRadius: '$full',
-      },
-      ':disabled': {
-        opacity: 0.5,
-      },
     },
   },
   { descendantStyle: ['_title', '_icon'], ancestorStyle: ['_tab'] }
