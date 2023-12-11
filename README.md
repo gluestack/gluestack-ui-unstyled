@@ -1,3 +1,6 @@
+# ⛔️ DEPRECATED
+We have deprecated this repository and migrated our codebase to a new mono repository structure, please follow [this](https://github.com/gluestack/gluestack-ui) link to access our latest updates and features.
+
 # gluestack-ui (beta)
 
 <h3 align="center">
